@@ -1,4 +1,4 @@
-# instagram-clone
+# Instagram Clone
 Gruppe 1:
 Andreas, Marcus, Sebastian, Oliver R, Christoffer
 
