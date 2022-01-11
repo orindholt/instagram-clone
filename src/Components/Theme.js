@@ -1,4 +1,4 @@
-const obj = {
+const theme = {
   colors: {
     red: "#ED4944",
     blue: "#0095f6",
@@ -16,4 +16,4 @@ const obj = {
   },
 }
 
-export const theme = {...obj};
+export const { colors, sizes, gradients } = theme;
