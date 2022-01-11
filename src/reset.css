@@ -1,48 +1,52 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 button {
-    background-color: transparent;
-    cursor: pointer;
+  background: none;
+  cursor: pointer;
 }
 
-button, a {
-    color: inherit
+button,
+a {
+  color: inherit;
 }
 
-select, button, textarea {
-    font-family: inherit;
+select,
+button,
+textarea {
+  font-family: inherit;
 }
 
-input, button, textarea {
-    border: none;
+input,
+button,
+textarea {
+  border: none;
 }
 
 textarea:focus {
-    outline: none;
+  outline: none;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
-input[type="submit"]{
-    cursor: pointer;
+input[type='submit'] {
+  cursor: pointer;
 }
-
