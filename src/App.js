@@ -1,17 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import "./reset.css";
-import { theme } from "./Components/Theme";
-const { colors: {red} } = theme;
-
-const style = css`
-  color: ${red}
-`;
+import Post from "./Templates/Post";
+import { colors } from "./Components/Theme";
 
 const App = () => {
   return (
-    <div className="App">
-      <p css={style}>Test</p>
+    <div className="App" css={css`color: ${colors.black}`} >
+      <Post />
     </div>
   );
 }
