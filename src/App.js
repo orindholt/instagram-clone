@@ -7,24 +7,16 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './reset.css'
 
 //style
-import { theme } from './Components/Theme'
+import { colors } from './Components/Theme'
 
 //components/templates
 import Home from './Pages/Home'
 import Profile from './Pages/Profile'
 import NotFound from './Pages/NotFound'
 
-/* const {
-  colors: { red },
-} = theme
-
-const style = css`
-  color: ${red};
-` */
-
 const App = () => {
   return (
-    <>
+    <div className="App" css={css`color: ${colors.black}`}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -32,7 +24,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   )
 }
 

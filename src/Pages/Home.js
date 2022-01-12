@@ -1,6 +1,10 @@
+import Post from "../Templates/Post";
+
 const Home = () => {
   // Add Templates here, for home page
-  return <p>Home Page</p>
+  return (
+    <Post />
+  );
 }
 
 export default Home
