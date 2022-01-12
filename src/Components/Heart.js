@@ -19,19 +19,15 @@ const Heart = () => {
   }
 
   return (
-    <div css={styleHeart} onClick={manageState}>
+    <div
+      css={css`
+        color: ${isHeart && colors.red};
+      `}
+      onClick={manageState}
+    >
       {isHeart ? <IoHeart /> : <IoHeartOutline />}
     </div>
   )
 }
-
-const styleHeart = css`
-  font-size: ${sizes.big};
-  color: ${colors.red};
-  margin: ${sizes.medium};
-  > svg {
-    cursor: pointer;
-  }
-`
 
 export default Heart
