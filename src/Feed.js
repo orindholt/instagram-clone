@@ -2,7 +2,10 @@ import React from 'react'
 
 const Feed = (props) => {
     const { id, caption, media_type, media_url} = props.feed
-    let post;
+    let category;
+
+
+    //switches styiling between the differrent categories
 
     switch (media_type) {
         case "VIDEO":
@@ -39,7 +42,7 @@ const Feed = (props) => {
 
     return (
         <>
-            {post}
+            {category}
         </>
     );
 }
