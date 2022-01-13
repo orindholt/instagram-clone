@@ -1,24 +1,31 @@
 /** @jsxImportSource @emotion/react */
-import { css, jsx } from "@emotion/react";
-import Theme from "./Components/Theme";
-import Header from "./Templates/Header";
+//imported libraries
+import { css } from '@emotion/react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-<script src="https://kit.fontawesome.com/ccda818105.js" crossorigin="anonymous"></script>
+//reset styling
+import './reset.css'
 
-const { red } = Theme.colors
+//style
+import { colors } from './Components/Theme'
 
-const style = css`
-  color: ${red}
-`;
-
+//components/templates
+import Home from './Pages/Home'
+import Profile from './Pages/Profile'
+import NotFound from './Pages/NotFound'
 
 const App = () => {
   return (
-    <div className="App">
-      <Header />
-      <p css={style}>Hello, this is a test</p>
+    <div className="App" css={css`color: ${colors.black}`}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
