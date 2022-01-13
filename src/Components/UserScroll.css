@@ -1,0 +1,8 @@
+
+.UserContainer {
+    overflow: hidden;
+}
+
+.UserContainer::-webkit-scrollbar {
+    display: none;
+}
