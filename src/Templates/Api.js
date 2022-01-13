@@ -6,31 +6,16 @@ const baseURL = "https://graph.instagram.com/me/media?fields=caption,id,media_ty
 
 //call post to get a component with instagram information
 
-export default function Post() { 
-  const [post, setPost] = React.useState(null);
+export default function ApiData() { 
+  const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
-      setPost(response.data.data);
+      setData(response.data.data);
       console.log('axios ran');
-      console.log(post);
+      console.log(data);
     });
   }, []);
 
-  if (!post) return null;
-
-  return (
-    <div className="container" style={{width: 300}}>
-    {post.map((post) => (
-      <div className="post" key={post.id + 'p'} style={{border: 'solid', marginBottom: 3, padding: 3}}>
-        <h2>{ post.caption }</h2>
-        <Feed key={post.id + 'f'} feed={post} />
-        <div className="byLine">
-          <p className="username">{ post.username }</p>
-          <p className="timestamp">{ post.timestamp }</p>
-        </div>
-      </div>
-    ))}
-  </div>
-  );
+  if (!data) return null;
 }

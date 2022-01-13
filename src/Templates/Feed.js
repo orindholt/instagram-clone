@@ -5,11 +5,13 @@ const Feed = (props) => {
     let category;
 
 
-    //switches styiling between the differrent categories
+    //switches styiling between the differrent categories 
+    
+    //!FOR TESTING ONLY
 
     switch (media_type) {
         case "VIDEO":
-            post = (
+            category = (
                 <video
                     width='100%'
                     height='auto' 
@@ -20,7 +22,7 @@ const Feed = (props) => {
             )
             break;
         case "CAROUSEL_ALBUM":
-            post = (
+            category = (
                 <img 
                     width='100%'
                     height='auto'
@@ -30,7 +32,7 @@ const Feed = (props) => {
             );
             break;
         default:
-            post = (
+            category = (
                 <img 
                     width='100%'
                     height='auto'
