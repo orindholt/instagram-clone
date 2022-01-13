@@ -13,8 +13,14 @@ const theme = {
     medium: '16px',
     small: '14px',
     smaller: '12px',
-    smallest: '10px'
+    smallest: '10px',
+  },
+  fontWeight: {
+    bold: '700',
+    regular: '400',
+    light: '300',
+    thin: '100',
   },
 }
 
-export const { colors, sizes, gradients } = theme
+export const { colors, sizes, gradients, fontWeight } = theme
