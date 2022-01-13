@@ -10,6 +10,7 @@ import './reset.css'
 import { colors } from './Components/Theme'
 
 //components/templates
+import Header from './Templates/Header'
 import Home from './Pages/Home'
 import Profile from './Pages/Profile'
 import NotFound from './Pages/NotFound'
@@ -17,6 +18,7 @@ import NotFound from './Pages/NotFound'
 const App = () => {
   return (
     <div className="App" css={css`color: ${colors.black}`}>
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
