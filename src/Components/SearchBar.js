@@ -10,7 +10,7 @@ const SearchBar = () => {
             height: 25px;
             width: 236px;
 
-            background-color: ${colors.lightGray};
+            background-color: #EFEFEF;
             border-radius: 5px;
             padding-left: 16px;
             padding-right: 16px;
