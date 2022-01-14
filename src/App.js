@@ -13,7 +13,6 @@ import { colors } from './Components/Theme'
 import Home from './Pages/Home'
 import Profile from './Pages/Profile'
 import NotFound from './Pages/NotFound'
-import UserProposal from './Components/UserProposal'
 
 const App = () => {
   return (
@@ -24,7 +23,6 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      <UserProposal />
       </BrowserRouter>
     </div>
   )
