@@ -5,8 +5,17 @@ import {css} from "@emotion/react";
 
 const SearchBar = () => {
     return ( 
-        <form css={css`color: ${colors.lightGray}`} className="" action="">
-            <input type="text" placeholder="Søg" name="search" />
+        <form className="" action="">
+            <input css={ css`
+            height: 25px;
+            width: 236px;
+
+            background-color: ${colors.lightGray};
+            border-radius: 5px;
+            padding-left: 16px;
+            padding-right: 16px;
+            `}
+             type="text" placeholder="Søg" name="search" />
         </form>
      );
 }

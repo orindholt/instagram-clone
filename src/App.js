@@ -18,7 +18,6 @@ import NotFound from './Pages/NotFound'
 const App = () => {
   return (
     <div className="App" css={css`color: ${colors.black}`}>
-      <Header />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
