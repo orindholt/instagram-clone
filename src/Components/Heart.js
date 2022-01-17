@@ -15,13 +15,16 @@ const Heart = () => {
   const manageState = () => {
     setIsHeart(!isHeart)
     setCount(isHeart ? count - 1 : count + 1)
-    console.log(count)
   }
 
   return (
     <div
       css={css`
         color: ${isHeart && colors.red};
+        cursor: pointer;
+        &:hover {
+          ${!isHeart && `color: ${colors.lightGray}`}
+        }
       `}
       onClick={manageState}
     >
