@@ -1,17 +1,39 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
+import { useEffect } from 'react'
 import {
   IoEllipsisHorizontal,
   IoChatbubbleOutline,
   IoPaperPlaneOutline,
   IoBookmarkOutline,
 } from 'react-icons/io5'
+import { useState } from 'react/cjs/react.development'
 import CommentField from '../Components/CommentField'
+import CommentView from '../Components/CommentView'
 import Flexbox from '../Components/Flexbox'
 import Heart from '../Components/Heart'
 import { colors, sizes } from '../Components/Theme'
 
+const storage = localStorage["comments"];
+
 const Post = () => {
+  const [ comments, setComments ] = useState([]);
+  const passCommentData = ({name, val}) => {
+    let commentObj = {
+      name: name,
+      val: val
+    }
+    setComments(comments ? [...comments, commentObj] : [commentObj]);
+  };
+
+  useEffect(()=>{
+    storage && setComments(JSON.parse(storage));
+  }, []);
+
+  useEffect(()=>{
+    localStorage["comments"] = JSON.stringify(comments);
+  }, [comments]);
+  
   return (
     <article
       css={css`
@@ -75,12 +97,7 @@ const Post = () => {
           style={css`
             gap: 16px;
             font-size: 24px;
-            & > * {
-              &:hover {
-                cursor: pointer;
-                color: ${colors.lightGray};
-              }
-            }
+            cursor: pointer;
           `}
         >
           <Heart />
@@ -121,16 +138,7 @@ const Post = () => {
             more
           </span>
         </p>
-        <p
-          css={css`
-            color: ${colors.gray};
-            &:hover {
-              cursor: pointer;
-            }
-          `}
-        >
-          View all 27 comments
-        </p>
+        <CommentView state={comments} />
         <p
           css={css`
             color: ${colors.gray};
@@ -141,7 +149,7 @@ const Post = () => {
           14 hours ago
         </p>
       </section>
-      <CommentField />
+      <CommentField func={passCommentData} />
     </article>
   )
 }
