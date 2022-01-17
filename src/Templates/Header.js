@@ -28,7 +28,6 @@ const Header = () => {
             
             display: flex;
             justify-content: space-between;
-            flex-direction: rows;  
             align-items: center;
             `}>
                 <Link to="/"><Logo /></Link>
