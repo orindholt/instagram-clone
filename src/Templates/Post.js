@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
+import { useEffect } from 'react'
 import {
   IoEllipsisHorizontal,
   IoChatbubbleOutline,
@@ -7,25 +8,32 @@ import {
   IoBookmarkOutline,
 } from 'react-icons/io5'
 import { useState } from 'react/cjs/react.development'
-import Comment from '../Components/Comment'
 import CommentField from '../Components/CommentField'
 import CommentView from '../Components/CommentView'
 import Flexbox from '../Components/Flexbox'
 import Heart from '../Components/Heart'
 import { colors, sizes } from '../Components/Theme'
 
-const Post = () => {
+const storage = localStorage["comments"];
 
-  const [comments, setComments] = useState([]);
+const Post = () => {
+  const [ comments, setComments ] = useState([]);
   const passCommentData = ({name, val}) => {
     let commentObj = {
       name: name,
       val: val
     }
-    comments ? setComments([...comments, commentObj]) : setComments([commentObj]);
-    console.log(comments);
+    setComments(comments ? [...comments, commentObj] : [commentObj]);
   };
 
+  useEffect(()=>{
+    storage && setComments(JSON.parse(storage));
+  }, []);
+
+  useEffect(()=>{
+    localStorage["comments"] = JSON.stringify(comments);
+  }, [comments]);
+  
   return (
     <article
       css={css`
@@ -89,12 +97,7 @@ const Post = () => {
           style={css`
             gap: 16px;
             font-size: 24px;
-            & > * {
-              &:hover {
-                cursor: pointer;
-                color: ${colors.lightGray};
-              }
-            }
+            cursor: pointer;
           `}
         >
           <Heart />
