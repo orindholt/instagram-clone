@@ -16,7 +16,7 @@ const CommentView = ({state}) => {
     >
       View all 27 comments
     </p>
-    {state.map(({name, val}) => {return <Comment username={name} value={val} />})}
+    {state.map(({name, val}, index) => {return <Comment key={index} username={name} value={val} />})}
     </>
   );
 }
