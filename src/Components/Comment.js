@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
+import { Link } from 'react-router-dom';
+import Heart from './Heart';
 import { colors } from './Theme';
 
 const Comment = ({username, value}) => {
@@ -10,13 +12,14 @@ const Comment = ({username, value}) => {
         gap: 5px;
       `}
     >
-        <p
+        <Link
+          to="/profile"
           css={css`
             font-weight: 600;
           `}
         >
           {username}
-        </p>
+        </Link>
         {value}
         <p
           css={css`
@@ -28,6 +31,7 @@ const Comment = ({username, value}) => {
         >
           {' '}
         </p>
+        <div css={css`margin-left: auto`}><Heart /></div>
     </div>
   );
 }
