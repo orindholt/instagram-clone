@@ -12,6 +12,7 @@ const Home = () => {
 				padding: 30px;
 			`}
 		>
+      <Header />
 			<Post />
 		</div>
 	);
