@@ -3,11 +3,11 @@ import Nav from "../Components/Nav"
 
 // Style
 /** @jsxImportSource @emotion/react */
-import { colors, sizes } from "../Components/Theme";
-import {css} from "@emotion/react";
+import { colors, sizes } from '../Components/Theme'
+import { css } from '@emotion/react'
 
 // Link
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     return ( 
@@ -31,5 +31,6 @@ const Header = () => {
 
      );
 }
- 
-export default Header;
+
+export default Header
+

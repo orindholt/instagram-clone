@@ -37,5 +37,5 @@ const SearchBar = () => {
         </form>
      );
 }
- 
-export default SearchBar;
+
+export default SearchBar
