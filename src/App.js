@@ -2,6 +2,7 @@
 //imported libraries
 import { css } from '@emotion/react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Header from './Templates/Header'
 
 //reset styling
 import './reset.css'
@@ -16,8 +17,9 @@ import NotFound from './Pages/NotFound'
 
 const App = () => {
   return (
-    <div className="App" css={css`color: ${colors.black}`}>
+    <div className="App" css={css`color: ${colors.black}; padding-top: 60px;`}>
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
