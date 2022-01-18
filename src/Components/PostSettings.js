@@ -28,8 +28,13 @@ const PostSettings = () => {
     return ( 
         <DarkeningOverlay>
             <Flexbox style={css`justify-content: space-around; align-items: center; height: 100%`}>
-                <div css={css`background-color: white; width: 260px; @media (min-width: 736px){ width: 400px } height: 288px; max-height: calc(100% - 40px); border-radius: 12px;`}>
-
+                <div css={css`
+                background-color: white;
+                min-width: 260px;
+                @media (min-width: 736px){ width: 400px }; 
+                height: 288px;
+                max-height: calc(100% - 40px); 
+                border-radius: 12px;`}>
                 </div>
             </Flexbox>
         </DarkeningOverlay>
