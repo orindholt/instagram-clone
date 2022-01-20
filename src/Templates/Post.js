@@ -16,7 +16,7 @@ import { colors, sizes } from '../Components/Theme'
 
 const storage = localStorage["comments"];
 
-const Post = () => {
+const Post = ({ setPostSettings }) => {
   const [ comments, setComments ] = useState([]);
   const passCommentData = ({name, val}) => {
     let commentObj = {
@@ -33,6 +33,7 @@ const Post = () => {
   useEffect(()=>{
     localStorage["comments"] = JSON.stringify(comments);
   }, [comments]);
+
   
   return (
     <article
@@ -69,6 +70,7 @@ const Post = () => {
           username
         </h2>
         <IoEllipsisHorizontal
+          onClick={() => setPostSettings(true)}
           css={css`
             &:hover {
               cursor: pointer;
@@ -154,4 +156,4 @@ const Post = () => {
   )
 }
 
-export default Post
+export default Post;

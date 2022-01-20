@@ -3,6 +3,8 @@
 import { css } from '@emotion/react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './Templates/Header'
+import React, { useState, useEffect } from 'react';
+
 
 //reset styling
 import './reset.css'
@@ -16,6 +18,8 @@ import Profile from './Pages/Profile'
 import NotFound from './Pages/NotFound'
 
 const App = () => {
+
+
   return (
     <div className="App" css={css`color: ${colors.black}; padding-top: 60px;`}>
       <BrowserRouter>
@@ -25,7 +29,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+        </BrowserRouter>
     </div>
   )
 }
