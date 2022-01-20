@@ -15,9 +15,18 @@ import Home from './Pages/Home'
 import Profile from './Pages/Profile'
 import NotFound from './Pages/NotFound'
 
+//app title
+document.title = 'Instagram Clone'
+
 const App = () => {
   return (
-    <div className="App" css={css`color: ${colors.black}; padding-top: 60px;`}>
+    <div
+      className="App"
+      css={css`
+        color: ${colors.black};
+        padding-top: 60px;
+      `}
+    >
       <BrowserRouter>
         <Header />
         <Routes>
