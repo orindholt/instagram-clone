@@ -15,7 +15,8 @@ const categories = [
   "symbols"
 ];
 
-const EmojiMenu = () => {
+const EmojiMenu = ({func}) => {
+  const getClickEmoji = (emoji) => {func(emoji)};
   const data = useEmojiFetch();
 
   const style = css`
@@ -25,7 +26,7 @@ const EmojiMenu = () => {
     max-height: 300px;
     border-radius: 10px;
     position: absolute;
-    bottom: 50px;
+    bottom: 125%;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 20%);
     padding: 10px;
@@ -38,7 +39,7 @@ const EmojiMenu = () => {
       {
         data ?
         categories.map((category, index) => {
-          return <EmojiCategory key={index} data={data} category={category} />
+          return <EmojiCategory key={index} data={data} category={category} func={getClickEmoji} />
         })
         : <LoadIcon />
       }

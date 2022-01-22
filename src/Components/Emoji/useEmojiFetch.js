@@ -6,6 +6,7 @@ const api = "https://emojihub.herokuapp.com/api";
 const useEmojiFetch = () => {
   const [ data, setData ] = useState(null);
   useEffect(()=>{
+    if(!localStorage["emojis"]){
       axios(`${api}/all`).then((res) => {
         const comparison = (a, b) => {
           if(a.htmlCode[0] > b.htmlCode[0]) return -1;
@@ -16,9 +17,14 @@ const useEmojiFetch = () => {
         let filteredData = sortedData.filter(obj => obj.htmlCode.length<2 && obj.htmlCode[0].length>7);
         setData(filteredData);
         localStorage["emojis"] = JSON.stringify(filteredData);
-    });
+        
+      });
+    } else {
+      setData(JSON.parse(localStorage["emojis"]));
+    }
   }, []);
-  return (localStorage["emojis"] ? JSON.parse(localStorage["emojis"]) : data);
+  
+  return data;
 }
 
 export default useEmojiFetch;
