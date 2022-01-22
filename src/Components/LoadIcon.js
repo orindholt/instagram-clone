@@ -12,7 +12,9 @@ const spinAnimation = keyframes`
 `;
 
 const style = css`
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 80px;
   height: 80px;
   &:after {
