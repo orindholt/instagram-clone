@@ -20,16 +20,8 @@ const Comment = ({username, value}) => {
         >
           {username}
         </Link>
-        {value}
-        <p
-          css={css`
-            color: ${colors.gray};
-            &:hover {
-              cursor: pointer;
-            }
-          `}
-        >
-          {' '}
+        <p css={css`overflow-x: hidden;`}>
+          {value}
         </p>
         <div css={css`margin-left: auto`}><Heart /></div>
     </div>
