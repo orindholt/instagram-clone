@@ -19,7 +19,7 @@ import ProfileIcon from '../Components/ProfileIcon'
 
 const storage = localStorage['comments']
 
-const Post = ({ setPostSettings }) => {
+const Post = ({ setPostSettings, data }) => {
   const [comments, setComments] = useState([])
   const [liked, setLiked] = useState(true)
 
@@ -124,7 +124,7 @@ const Post = ({ setPostSettings }) => {
               font-weight: 600;
             `}
           >
-            username{' '}
+            {data.username}
           </span>
           Lorem ipsum. ...
           <span

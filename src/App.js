@@ -3,7 +3,6 @@
 import { css } from '@emotion/react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './Templates/Header'
-import React, { useState, useEffect } from 'react';
 
 
 //reset styling
@@ -21,8 +20,6 @@ import NotFound from './Pages/NotFound'
 document.title = 'Instagram Clone'
 
 const App = () => {
-
-
   return (
     <div
       className="App"
