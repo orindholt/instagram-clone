@@ -19,6 +19,7 @@ const DarkeningOverlay = (props,{ setPostSettings }) => {
         <div className='stopScroll'
           onClick={handleOnClick}
           css={css`
+            z-index: 100;
             display: flex;
             justify-content: space-around;
             align-items: center;

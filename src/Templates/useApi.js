@@ -6,7 +6,7 @@ const baseURL = "https://graph.instagram.com/me/media?fields=caption,id,media_ty
 
 //call post to get a component with instagram information
 
-export default function ApiData() { 
+export default function useApi() { 
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
@@ -17,5 +17,5 @@ export default function ApiData() {
     });
   }, []);
 
-  if (!data) return null;
+  return data ? data : null;
 }
