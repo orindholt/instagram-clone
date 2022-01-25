@@ -12,6 +12,7 @@ import CommentField from '../Components/Comment/CommentField'
 import CommentView from '../Components/Comment/CommentView'
 import Flexbox from '../Components/Flexbox'
 import Heart from '../Components/Heart'
+import useApi from './useApi';
 
 import { colors, sizes } from '../Components/Theme'
 import ProfileIcon from '../Components/ProfileIcon'
@@ -65,7 +66,7 @@ const Post = ({ setPostSettings }) => {
             font-size: ${sizes.small};
           `}
         >
-          username
+          {data.username}
         </h2>
         <IoEllipsisHorizontal
           onClick={() => setPostSettings(true)}
@@ -77,7 +78,7 @@ const Post = ({ setPostSettings }) => {
         />
       </section>
       <img
-        src="https://vetexplainspets.com/wp-content/uploads/2020/06/edited-why-do-dogs-wink-1-of-4-1024x681.jpg"
+        src={data.media_url}
         alt="Post"
         css={css`
           height: 615px;

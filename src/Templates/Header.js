@@ -18,12 +18,11 @@ const Header = () => {
                 height: 60px;
                 width: 100%;
                 border-bottom: 1px solid ${colors.lightGray};
-                
                 background-color: white;
-                
                 margin: auto;
                 display: flex;
                 align-items: center;
+                z-index: 10;
             `}>
                 <Nav />
             </header>
