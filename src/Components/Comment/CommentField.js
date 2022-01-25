@@ -48,7 +48,6 @@ const CommentField = (props) => {
 				value={value}
 				onChange={e => {
 					setValue(e.target.value);
-					e.target.value ? setEnablePost(true) : setEnablePost(false);
 				}}
 				css={css`
 					width: 100%;
@@ -60,10 +59,10 @@ const CommentField = (props) => {
 			<button
 				type="submit"
 				css={css`
-					color: ${enablePost ? colors.blue : colors.lightBlue};
-					cursor: ${enablePost ? "pointer" : "auto"};
+					color: ${value ? colors.blue : colors.lightBlue};
+					cursor: ${value ? "pointer" : "auto"};
 				`}
-				disabled={!enablePost}
+				disabled={!value}
 			>
 				Post
 			</button>

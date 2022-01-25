@@ -10,7 +10,7 @@ const SearchBar = () => {
     return ( 
         <form css={ css`
             height: 34px;
-            width: 209px;
+            width: 229px;
 
             background-color: ${colors.lightGray};
             border-radius: 7px;

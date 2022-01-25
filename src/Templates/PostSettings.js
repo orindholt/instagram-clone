@@ -53,7 +53,7 @@ const PostSettings = ({ setPostSettings }) => {
                         <p>Indlejr</p>
                     </PostSettingOption>
                     <PostSettingOption>
-                        <p>Annuler</p>
+                        <p>Annuller</p>
                     </PostSettingOption>
                 </div>
         </DarkeningOverlay>
