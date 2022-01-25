@@ -1,16 +1,21 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useState } from "react";
-import { colors } from "./Theme";
-import { IoAddCircleOutline } from "react-icons/io5";
+import { useRef, useState } from "react";
+import { colors, sizes } from "../Theme";
+import { IoHappyOutline } from "react-icons/io5";
+import EmojiMenu from "../Emoji/EmojiMenu";
 
 const CommentField = (props) => {
 	const [value, setValue] = useState("");
 	const [enablePost, setEnablePost] = useState(false);
+  const [showEmojis, setShowEmojis] = useState(false);
+
+	const getClickEmoji = (emoji) => setValue(`${value}${emoji}`);
 
 	return (
 		<form
 			css={css`
+        position: relative;
 				border-top: 1px solid ${colors.lightGray};
 				padding: 16px;
 				display: flex;
@@ -25,14 +30,18 @@ const CommentField = (props) => {
         }
       }}
 		>
-			<IoAddCircleOutline
+			<IoHappyOutline
+        onClick={()=>{
+          setShowEmojis(!showEmojis);
+        }}
 				css={css`
+          position: relative;
 					color: ${colors.gray};
-					&:hover {
-						cursor: pointer;
-					}
+          font-size: ${sizes.big};
+          cursor: pointer;
 				`}
 			/>
+      {showEmojis && <EmojiMenu func={getClickEmoji} />}
 			<input
 				type="text"
 				placeholder="Add a comment"
@@ -42,6 +51,7 @@ const CommentField = (props) => {
 					e.target.value ? setEnablePost(true) : setEnablePost(false);
 				}}
 				css={css`
+					width: 100%;
 					&::placeholder {
 						color: ${colors.gray};
 					}
@@ -52,7 +62,6 @@ const CommentField = (props) => {
 				css={css`
 					color: ${enablePost ? colors.blue : colors.lightBlue};
 					cursor: ${enablePost ? "pointer" : "auto"};
-					margin-left: auto;
 				`}
 				disabled={!enablePost}
 			>

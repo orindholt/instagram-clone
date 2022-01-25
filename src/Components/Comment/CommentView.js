@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import Comment from './Comment';
-import { colors } from './Theme';
+
+import { colors } from '../Theme';
 
 const CommentView = ({state}) => {
   return (

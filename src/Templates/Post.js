@@ -7,11 +7,12 @@ import {
   IoPaperPlaneOutline,
   IoBookmarkOutline,
 } from 'react-icons/io5'
-import { useState } from 'react/cjs/react.development'
-import CommentField from '../Components/CommentField'
-import CommentView from '../Components/CommentView'
+import { useState } from 'react'
+import CommentField from '../Components/Comment/CommentField'
+import CommentView from '../Components/Comment/CommentView'
 import Flexbox from '../Components/Flexbox'
 import Heart from '../Components/Heart'
+
 import { colors, sizes } from '../Components/Theme'
 
 const storage = localStorage["comments"];

@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { Link } from 'react-router-dom';
-import Heart from './Heart';
-import { colors } from './Theme';
+import { colors } from '../Theme';
+import Heart from '../Heart';
 
 const Comment = ({username, value}) => {
   return (
@@ -20,16 +20,8 @@ const Comment = ({username, value}) => {
         >
           {username}
         </Link>
-        {value}
-        <p
-          css={css`
-            color: ${colors.gray};
-            &:hover {
-              cursor: pointer;
-            }
-          `}
-        >
-          {' '}
+        <p css={css`overflow-x: hidden;`}>
+          {value}
         </p>
         <div css={css`margin-left: auto`}><Heart /></div>
     </div>
