@@ -12,7 +12,7 @@ import CommentField from '../Components/Comment/CommentField'
 import CommentView from '../Components/Comment/CommentView'
 import Flexbox from '../Components/Flexbox'
 import Heart from '../Components/Heart'
-import useApi from './useApi';
+import useApi from './useApi'
 
 import { colors, sizes } from '../Components/Theme'
 import ProfileIcon from '../Components/ProfileIcon'
@@ -147,7 +147,7 @@ const Post = ({ setPostSettings, data }) => {
             font-size: ${sizes.smallest};
           `}
         >
-          14 hours ago
+          {new Date(data.timestamp).toDateString()}
         </p>
       </section>
       <CommentField func={passCommentData} />
