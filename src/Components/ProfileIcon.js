@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
-import { colors } from "../Components/Theme";
+import { css } from '@emotion/react'
+import { colors } from '../Components/Theme'
 
-const ProfileIcon = ({ size = "32px" }) => {
+const ProfileIcon = ({ size = '32px' }) => {
   return (
     <img
       src="https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg"
@@ -14,7 +14,7 @@ const ProfileIcon = ({ size = "32px" }) => {
         border: 1px solid ${colors.lightGray};
       `}
     />
-  );
+  )
 }
- 
-export default ProfileIcon;
+
+export default ProfileIcon
