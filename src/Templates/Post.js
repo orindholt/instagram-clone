@@ -14,11 +14,16 @@ import Flexbox from '../Components/Flexbox'
 import Heart from '../Components/Heart'
 
 import { colors, sizes } from '../Components/Theme'
+import ProfileIcon from '../Components/ProfileIcon'
 
 const storage = localStorage["comments"];
 
 const Post = ({ setPostSettings }) => {
   const [ comments, setComments ] = useState([]);
+  const [ liked, setLiked ] = useState(false);
+
+  const getHeartState = (state) => {setLiked(state)}
+
   const passCommentData = ({name, val}) => {
     let commentObj = {
       name: name,
@@ -52,16 +57,7 @@ const Post = ({ setPostSettings }) => {
           gap: 16px;
         `}
       >
-        <img
-          src="https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg"
-          alt="Profile"
-          css={css`
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: 1px solid ${colors.lightGray};
-          `}
-        />
+        <ProfileIcon />
         <h2
           css={css`
             margin-right: auto;
@@ -103,7 +99,7 @@ const Post = ({ setPostSettings }) => {
             cursor: pointer;
           `}
         >
-          <Heart />
+          <Heart func={getHeartState} />
           <IoChatbubbleOutline />
           <IoPaperPlaneOutline />
           <IoBookmarkOutline
@@ -118,7 +114,7 @@ const Post = ({ setPostSettings }) => {
             font-size: inherit;
           `}
         >
-          234 Likes
+          {`${liked ? 0 : 1} Likes`}
         </h3>
         <p>
           <span

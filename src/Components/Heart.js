@@ -8,18 +8,18 @@ import { colors, sizes, gradients } from './Theme'
 //imported icons
 import { IoHeartOutline, IoHeart } from 'react-icons/io5'
 
-const Heart = () => {
+const Heart = ({func}) => {
   const [isHeart, setIsHeart] = useState(false)
-  const [count, setCount] = useState(0)
 
   const manageState = () => {
     setIsHeart(!isHeart)
-    setCount(isHeart ? count - 1 : count + 1)
+    func(isHeart);
   }
 
   return (
     <div
       css={css`
+        user-select: none;
         color: ${isHeart && colors.red};
         cursor: pointer;
         &:hover {
