@@ -17,31 +17,32 @@ import useApi from './useApi';
 import { colors, sizes } from '../Components/Theme'
 import ProfileIcon from '../Components/ProfileIcon'
 
-const storage = localStorage["comments"];
+const storage = localStorage['comments']
 
-const Post = ({ setPostSettings, data }) => {
-  const [ comments, setComments ] = useState([]);
-  const [ liked, setLiked ] = useState(false);
+const Post = ({ setPostSettings }) => {
+  const [comments, setComments] = useState([])
+  const [liked, setLiked] = useState(true)
 
-  const getHeartState = (state) => {setLiked(state)}
+  const getHeartState = (state) => {
+    setLiked(state)
+  }
 
-  const passCommentData = ({name, val}) => {
+  const passCommentData = ({ name, val }) => {
     let commentObj = {
       name: name,
-      val: val
+      val: val,
     }
-    setComments(comments ? [...comments, commentObj] : [commentObj]);
-  };
+    setComments(comments ? [...comments, commentObj] : [commentObj])
+  }
 
-  useEffect(()=>{
-    storage && setComments(JSON.parse(storage));
-  }, []);
+  useEffect(() => {
+    storage && setComments(JSON.parse(storage))
+  }, [])
 
-  useEffect(()=>{
-    localStorage["comments"] = JSON.stringify(comments);
-  }, [comments]);
+  useEffect(() => {
+    localStorage['comments'] = JSON.stringify(comments)
+  }, [comments])
 
-  
   return (
     <article
       css={css`
@@ -154,4 +155,4 @@ const Post = ({ setPostSettings, data }) => {
   )
 }
 
-export default Post;
+export default Post
