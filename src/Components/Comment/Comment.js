@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { Link } from 'react-router-dom';
-import { colors } from '../Theme';
+import { useState } from 'react/cjs/react.development';
 import Heart from '../Heart';
 
 const Comment = ({username, value}) => {
+  const [isLiked, setLiked] = useState(false);
+  const getHeartState = (state) => {setLiked(state)}
   return (
     <div
       css={css`
@@ -23,7 +25,7 @@ const Comment = ({username, value}) => {
         <p css={css`overflow-x: hidden;`}>
           {value}
         </p>
-        <div css={css`margin-left: auto`}><Heart /></div>
+        <div css={css`margin-left: auto`}><Heart func={getHeartState} /></div>
     </div>
   );
 }

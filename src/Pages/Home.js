@@ -11,7 +11,7 @@ import useApi from '../Templates/useApi';
 const Home = () => {
 	const [postSettings, setPostSettings] = useState(false);
 	const data = useApi();
-	console.log(data);
+
 	// Add Templates here, for home page
 	return (
 		<div

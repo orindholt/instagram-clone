@@ -3,8 +3,11 @@ import { css } from "@emotion/react";
 import ProfileIcon from "../Components/ProfileIcon";
 import Suggestion from "../Components/Suggestion";
 import { colors, fontWeight, sizes } from "../Components/Theme";
+import useApi from "./useApi";
 
 const Suggestions = () => {
+  const data = useApi();
+
   return (
     <aside
       css={css`
@@ -26,7 +29,9 @@ const Suggestions = () => {
       `}>
         <ProfileIcon size={"56px"} />
         <div css={css`font-size: ${sizes.small};`}>
-          <h3 css={css`font-size: inherit;`}>username</h3>
+          <h3 css={css`font-size: inherit;`}>
+            {data && data[0].username}
+          </h3>
           <p>real name</p>
         </div>
         <button css={css`

@@ -12,21 +12,13 @@ import CommentField from '../Components/Comment/CommentField'
 import CommentView from '../Components/Comment/CommentView'
 import Flexbox from '../Components/Flexbox'
 import Heart from '../Components/Heart'
-import useApi from './useApi';
 
 import { colors, sizes } from '../Components/Theme'
 import ProfileIcon from '../Components/ProfileIcon'
 
-const storage = localStorage['comments']
-
 const Post = ({ setPostSettings, data }) => {
   const [comments, setComments] = useState([])
-  const [liked, setLiked] = useState(true)
-
-  const getHeartState = (state) => {
-    setLiked(state)
-  }
-
+  const [liked, setLiked] = useState(false)
   const passCommentData = ({ name, val }) => {
     let commentObj = {
       name: name,
@@ -34,14 +26,33 @@ const Post = ({ setPostSettings, data }) => {
     }
     setComments(comments ? [...comments, commentObj] : [commentObj])
   }
+  const getHeartState = (state) => {
+    setLiked(state)
+  }
 
-  useEffect(() => {
-    storage && setComments(JSON.parse(storage))
-  }, [])
+  // kunne ikke nå at lave localstorage
+  
+  /* const currentStorage = localStorage[data.id];
 
-  useEffect(() => {
-    localStorage['comments'] = JSON.stringify(comments)
-  }, [comments])
+  let postObj = {
+    id: data.id,
+    comments: currentStorage ? currentStorage.comments : comments,
+    isLiked: currentStorage ? currentStorage.isLiked : liked
+  }
+  
+  useEffect(()=>{
+    if(liked || comments.length){
+      localStorage[data.id] = JSON.stringify(postObj);
+    }
+  }, [comments, liked]);
+  
+  useEffect(()=>{
+    if(currentStorage){
+      setLiked(postObj.isLiked);
+      setComments(postObj.comments);
+      console.log(comments);
+    }
+  }, []); */
 
   return (
     <article
@@ -116,11 +127,12 @@ const Post = ({ setPostSettings, data }) => {
             font-size: inherit;
           `}
         >
-          {`${liked ? 0 : 1} Likes`}
+          {`${liked ? 1 : 0} Likes`}
         </h3>
         <p>
           <span
             css={css`
+              margin-right: 5px;
               font-weight: 600;
             `}
           >
