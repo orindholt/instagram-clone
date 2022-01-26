@@ -3,6 +3,7 @@ import { css } from '@emotion/react'
 import ProfileIcon from '../Components/ProfileIcon'
 import Suggestion from '../Components/Suggestion'
 import { colors, fontWeight, sizes } from '../Components/Theme'
+import useApi from '../Templates/useApi'
 
 const Suggestions = () => {
   const data = useApi();
