@@ -159,7 +159,7 @@ const Post = ({ setPostSettings, data }) => {
             font-size: ${sizes.smallest};
           `}
         >
-          14 hours ago
+          {new Date(data.timestamp).toDateString()}
         </p>
       </section>
       <CommentField func={passCommentData} />
