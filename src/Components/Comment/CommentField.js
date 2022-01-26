@@ -23,8 +23,7 @@ const CommentField = (props) => {
         gap: 16px;
       `}
       onSubmit={(e) => {
-        console.log('hey!!!')
-        /*         e.preventDefault(); */
+        e.preventDefault()
         if (value) {
           props.func({ name: 'username', val: value })
           setValue('')
