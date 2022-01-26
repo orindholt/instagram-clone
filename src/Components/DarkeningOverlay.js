@@ -4,10 +4,6 @@ import { css } from '@emotion/react'
 const DarkeningOverlay = ({ setPostSettings, children }) => {
 
   function handleOnClick(e){
-    console.log('target:');
-    console.log(e.target);
-    console.log('currentTarget:');
-    console.log(e.currentTarget);
     if(e.target === e.currentTarget){
       setPostSettings(false)
     }
