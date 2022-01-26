@@ -1,8 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import React, { useState, useEffect } from 'react';
-
-
 import Post from "../Templates/Post";
 import PostSettings from '../Templates/PostSettings';
 import Suggestions from '../Templates/Suggestions';
@@ -28,7 +26,6 @@ const Home = () => {
 			</div>
 			{postSettings && <PostSettings setPostSettings={setPostSettings}/>}
 			<Suggestions />
-			
 		</div>
 	);
 };

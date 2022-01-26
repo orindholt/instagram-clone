@@ -19,15 +19,18 @@ import ProfileIcon from '../Components/ProfileIcon'
 const Post = ({ setPostSettings, data }) => {
   const [comments, setComments] = useState([])
   const [liked, setLiked] = useState(false)
+
   const passCommentData = ({ name, val }) => {
     let commentObj = {
       name: name,
       val: val,
     }
     setComments(comments ? [...comments, commentObj] : [commentObj])
+    /* localStorage[data.id] = [...localStorage[data.id], JSON.stringify(comments)]; */
   }
   const getHeartState = (state) => {
     setLiked(state)
+    /* localStorage[data.id] = [...localStorage[data.id], state]; */
   }
 
   // kunne ikke nå at lave localstorage
@@ -59,7 +62,7 @@ const Post = ({ setPostSettings, data }) => {
       css={css`
         max-width: 615px;
         width: 100%;
-        border: 1px solid ${colors.lightGray};
+        border: 1px solid ${colors.lighterGray};
       `}
     >
       <section

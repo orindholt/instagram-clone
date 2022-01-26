@@ -12,7 +12,7 @@ const SearchBar = () => {
             height: 34px;
             width: 229px;
 
-            background-color: ${colors.lightGray};
+            background-color: ${colors.lighterGray};
             border-radius: 7px;
             padding: 0 16px;
             display: flex;
@@ -24,7 +24,7 @@ const SearchBar = () => {
                 value={value}
                 onChange={(e)=>{setValue(e.target.value)}}
                 css={css`
-                    background-color: ${colors.lightGray};
+                    background-color: ${colors.lighterGray};
                     font-size: ${sizes.small};
                     &::placeholder {
                         font-size: ${sizes.medium};

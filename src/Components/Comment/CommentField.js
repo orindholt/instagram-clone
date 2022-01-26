@@ -16,17 +16,17 @@ const CommentField = (props) => {
     <form
       css={css`
         position: relative;
-        border-top: 1px solid ${colors.lightGray};
-        padding: 16px;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-      `}
-      onSubmit={(e) => {
-        e.preventDefault()
-        if (value) {
-          props.func({ name: 'username', val: value })
-          setValue('')
+				border-top: 1px solid ${colors.lighterGray};
+				padding: 16px;
+				display: flex;
+				align-items: center;
+				gap: 16px;
+			`}
+      onSubmit={(e)=>{
+        e.preventDefault();
+        if(value){
+          func({name: "username", val: value});
+          setValue("");
         }
       }}
     >

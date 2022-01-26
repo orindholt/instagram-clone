@@ -17,7 +17,7 @@ const Header = () => {
                 top: 0px;
                 height: 60px;
                 width: 100%;
-                border-bottom: 1px solid ${colors.lightGray};
+                border-bottom: 1px solid ${colors.lighterGray};
                 background-color: white;
                 margin: auto;
                 display: flex;

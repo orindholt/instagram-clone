@@ -38,7 +38,7 @@ const NavIcons = () => {
             width: 22px;
             height: 22px;
             border-radius: 50%;
-            border: 1px solid ${colors.lightGray};
+            border: 1px solid ${colors.lighterGray};
           `}
         />
       </Link>

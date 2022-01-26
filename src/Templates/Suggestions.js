@@ -4,6 +4,7 @@ import ProfileIcon from '../Components/ProfileIcon'
 import Suggestion from '../Components/Suggestion'
 import { colors, fontWeight, sizes } from '../Components/Theme'
 import useApi from '../Templates/useApi'
+import Footer from './Footer'
 
 const Suggestions = () => {
   const data = useApi();
@@ -40,7 +41,7 @@ const Suggestions = () => {
               font-size: inherit;
             `}
           >
-            username
+            {data ? data[0].username : "username"}
           </h3>
           <p>real name</p>
         </div>
@@ -94,23 +95,7 @@ const Suggestions = () => {
         <Suggestion />
         <Suggestion />
       </div>
-      <footer
-        css={css`
-          color: ${colors.lightGray};
-          font-size: ${sizes.smallest};
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          line-height: 1.5;
-          margin-top: 30px;
-        `}
-      >
-        <p>
-          About · Help · Press · API · Jobs · Privacy · Terms · Locations · Top Accounts · Hashtags
-          · Language · English
-        </p>
-        <p>{`© ${new Date().getFullYear()} INSTAGRAM FROM META`}</p>
-      </footer>
+      <Footer />
     </aside>
   )
 }

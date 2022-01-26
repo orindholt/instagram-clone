@@ -23,7 +23,7 @@ const Heart = ({func}) => {
         color: ${isHeart && colors.red};
         cursor: pointer;
         &:hover {
-          ${!isHeart && `color: ${colors.lightGray}`}
+          ${!isHeart && `color: ${colors.lighterGray}`}
         }
       `}
       onClick={manageState}

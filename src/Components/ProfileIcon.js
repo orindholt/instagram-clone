@@ -12,7 +12,7 @@ const ProfileIcon = ({ size = '32px' }) => {
         width: ${size};
         height: auto;
         border-radius: 50%;
-        border: 1px solid ${colors.lightGray};
+        border: 1px solid ${colors.lighterGray};
       `}
     />
   )

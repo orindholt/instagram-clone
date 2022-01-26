@@ -15,6 +15,7 @@ import { colors } from './Components/Theme'
 import Home from './Pages/Home'
 import Profile from './Pages/Profile'
 import NotFound from './Pages/NotFound'
+import Footer from './Templates/Footer'
 
 //app title
 document.title = 'Instagram Clone'
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
         </BrowserRouter>
+        <Footer style={css`text-align: center;`} />
     </div>
   )
 }
