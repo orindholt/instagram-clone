@@ -3,17 +3,17 @@
 import { css } from '@emotion/react'
 import { useState } from 'react'
 
-import { colors, sizes, gradients } from './Theme'
+import { colors } from './Theme'
 
 //imported icons
 import { IoHeartOutline, IoHeart } from 'react-icons/io5'
 
 const Heart = ({func}) => {
-  const [isHeart, setIsHeart] = useState(false)
+  const [isHeart, setIsHeart] = useState(false);
 
   const manageState = () => {
-    setIsHeart(!isHeart)
-    func(isHeart);
+    func(!isHeart);
+    setIsHeart(!isHeart);
   }
 
   return (
