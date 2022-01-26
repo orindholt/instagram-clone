@@ -9,7 +9,7 @@ const PostSettingOption = (props) => {
         <Flexbox style={css`
         width: 100%; 
         height: calc(100% / 6); 
-        border-bottom: 1px solid ${colors.lightGray}; 
+        border-bottom: 1px solid ${colors.lighterGray}; 
         font-weight: ${fontWeight.light};
         font-size: ${sizes.small};
         justify-content: space-around; 

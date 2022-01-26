@@ -15,7 +15,7 @@ const CommentField = ({func}) => {
 		<form
 			css={css`
         position: relative;
-				border-top: 1px solid ${colors.lightGray};
+				border-top: 1px solid ${colors.lighterGray};
 				padding: 16px;
 				display: flex;
 				align-items: center;

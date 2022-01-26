@@ -23,8 +23,8 @@ const style = css`
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    border: 3px solid ${colors.lightGray};
-    border-color: ${colors.lightGray} transparent ${colors.lightGray} transparent;
+    border: 3px solid ${colors.lighterGray};
+    border-color: ${colors.lighterGray} transparent ${colors.lighterGray} transparent;
     animation: ${spinAnimation} 1.2s linear infinite;
   }
 `;

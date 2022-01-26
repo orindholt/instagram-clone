@@ -38,7 +38,7 @@ const ProfileDetails = () => {
                 margin-left: 22px;
                 margin-right: 100px;
                 border-radius: 50%;
-                border: 1px solid ${colors.lightGray};
+                border: 1px solid ${colors.lighterGray};
                 `} /> </Link>
             </div>
             <div
@@ -60,7 +60,7 @@ const ProfileDetails = () => {
                     <button
                     css={ css`
                     color: ${colors.black};
-                    border: 1px solid ${colors.lightGray};
+                    border: 1px solid ${colors.lighterGray};
                     border-radius: 3px;
                     margin-right: 22px;
                     padding-top: 5px;
