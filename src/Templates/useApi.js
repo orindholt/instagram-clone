@@ -11,8 +11,6 @@ export default function useApi() {
   useEffect(() => {
     axios.get(baseURL).then((response) => {
       setData(response.data.data);
-      console.log('axios ran');
-      console.log(data);
     });
   }, []);
 

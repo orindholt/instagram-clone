@@ -14,9 +14,6 @@ const PostSettings = ({ setPostSettings }) => {
             if (!element) {
                 return
             }
-            
-            console.log('stop scroll');
-
             element.style.overflowY = disabled ? 'hidden' : 'scroll'
     
             return () => {

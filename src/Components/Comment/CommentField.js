@@ -5,9 +5,8 @@ import { colors, sizes } from "../Theme";
 import { IoHappyOutline } from "react-icons/io5";
 import EmojiMenu from "../Emoji/EmojiMenu";
 
-const CommentField = (props) => {
+const CommentField = ({func}) => {
 	const [value, setValue] = useState("");
-	const [enablePost, setEnablePost] = useState(false);
   const [showEmojis, setShowEmojis] = useState(false);
 
 	const getClickEmoji = (emoji) => setValue(`${value}${emoji}`);
@@ -25,7 +24,7 @@ const CommentField = (props) => {
       onSubmit={(e)=>{
         e.preventDefault();
         if(value){
-          props.func({name: "username", val: value});
+          func({name: "username", val: value});
           setValue("");
         }
       }}
